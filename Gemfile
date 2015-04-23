@@ -2,6 +2,7 @@ source 'https://rubygems.org'
 
 # Globals dependencies
 gem 'rails', '4.2.1'
+gem 'pg'
 
 # Production environment dependencies
 group :production, :staging do
