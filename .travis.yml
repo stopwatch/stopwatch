@@ -1,7 +1,7 @@
 language: ruby
 matrix:
   include:
-    - rvm: 2.1
+    - rvm: 2.2.2
       env: COVERAGE=ci
 bundler_args: --without production staging --deployment
 before_script:
