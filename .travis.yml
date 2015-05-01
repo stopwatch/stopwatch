@@ -1,4 +1,6 @@
 language: ruby
+services:
+  - redis-server
 matrix:
   include:
     - rvm: 2.2.2

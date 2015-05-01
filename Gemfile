@@ -5,6 +5,8 @@ ruby '2.2.2'
 # Globals dependencies
 gem 'rails', '4.2.1'
 gem 'pg'
+gem 'redis'
+gem 'redis-namespace'
 gem 'jsonapi-resources'
 
 # Production environment dependencies
