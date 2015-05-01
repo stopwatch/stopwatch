@@ -1,0 +1,19 @@
+language: ruby
+matrix:
+  include:
+    - rvm: 2.1
+      env: COVERAGE=ci
+bundler_args: --without production staging --deployment
+before_script:
+  - mkdir -p tmp/cache
+  - psql -c 'create database travis_ci_test;' -U postgres
+  - cp config/database.travis.yml config/database.yml
+script: bundle exec rake ci
+notifications:
+  email: false
+addons:
+  postgresql: '9.3'
+  code_climate:
+    repo_token:
+      secure: "H/9h9M4mPY/l2jF8B4FiCV95qR3jsqC9HIF6Q8zDR8g45ZA48O+n2MJEMozHEj7AHf5m61Cygwrcvm3kBsfnqJUqPFXga4gtVH7a6Q8911qlzLJu5ZLYNfs6EAw+0LMt2JnzCI8h+o+B7HPzOtXFiI1XsybDPjd2XBlvB0kZxZk="
+cache: bundler
