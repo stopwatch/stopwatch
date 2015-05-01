@@ -13,6 +13,8 @@ end
 
 # Development environment dependencies (also needed by test environement)
 group :development, :test do
+  gem 'dotenv-rails'
+
   gem 'rspec-rails'
   gem 'shoulda-matchers', require: false
   gem 'factory_girl_rails'
