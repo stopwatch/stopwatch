@@ -4,23 +4,12 @@ class Timer < ActiveRecord::Base
   before_validation :generate_url_key
   before_validation :generate_admin_key
 
-  def id
-    id = read_attribute(:id)
-
-    if id.nil?
-      id = $redis.incr('timer:ids')
-      write_attribute(:id, id)
-    end
-
-    id
-  end
-
   private
 
   def generate_url_key
     return unless url_key.nil?
 
-    value = self.id
+    value = $redis.incr('timer:url_keys')
     result = ''
 
     until value == 0
