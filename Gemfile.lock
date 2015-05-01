@@ -62,6 +62,8 @@ GEM
       activesupport (>= 4.1.0)
     i18n (0.7.0)
     json (1.8.2)
+    jsonapi-resources (0.3.3)
+      rails (>= 4.0)
     loofah (2.0.1)
       nokogiri (>= 1.5.9)
     mail (2.6.3)
@@ -147,6 +149,7 @@ DEPENDENCIES
   byebug
   factory_girl_rails
   faker
+  jsonapi-resources
   pg
   rails (= 4.2.1)
   rspec-rails
